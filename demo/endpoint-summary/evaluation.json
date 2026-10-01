@@ -1,0 +1,63 @@
+{
+  "evaluator_version": "0.1.0",
+  "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+  "contract_id": "synthetic-clock-summary",
+  "status": "violated",
+  "context_sha256": "59ee948e131ea53909eaba9824586de8eb3acf7453fbfd70f32ac7cfe39a4568",
+  "checks": {
+    "endpoint": {
+      "status": "violated",
+      "reason": "Target is not uniquely reconstructible from the declared available components.",
+      "missing_target_components": [
+        "death",
+        "last_contact",
+        "progression",
+        "randomization"
+      ],
+      "witness": {
+        "observed_components": {
+          "source_elapsed_days": 60,
+          "source_event": false
+        },
+        "history_a": {
+          "diagnosis": 0,
+          "randomization": 0,
+          "progression": null,
+          "death": null,
+          "death_with_tumor": false,
+          "last_contact": 60,
+          "new_therapy": 80,
+          "last_pretherapy_assessment": 60
+        },
+        "history_b": {
+          "diagnosis": 0,
+          "randomization": 30,
+          "progression": null,
+          "death": null,
+          "death_with_tumor": false,
+          "last_contact": 60,
+          "new_therapy": null,
+          "last_pretherapy_assessment": null
+        },
+        "target_a": {
+          "elapsed_days": 60,
+          "event": false
+        },
+        "target_b": {
+          "elapsed_days": 30,
+          "event": false
+        },
+        "synthetic": true
+      },
+      "scope": "Constructive witness in restricted source/target rules; not a clinical incompatibility certificate.",
+      "histories_compared": 139
+    }
+  },
+  "decision": {
+    "state": "current",
+    "actor": "Demonstration author",
+    "action": "seek_information",
+    "reason": "Request the missing origin/source components or retain the original endpoint; do not transform an unidentified target."
+  },
+  "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+}

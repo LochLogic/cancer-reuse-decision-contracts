@@ -1,0 +1,57 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "synthetic-missing-specification",
+      "description": "Synthetic illustration: can a diagnosis-based endpoint summary support a randomization-based elapsed-time target?",
+      "datePublished": "2026-09-30",
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT"
+      },
+      "hasPart": [
+        {
+          "@id": "contract.json"
+        },
+        {
+          "@id": "evaluation.json"
+        },
+        {
+          "@id": "report.html"
+        }
+      ]
+    },
+    {
+      "@id": "contract.json",
+      "@type": "File",
+      "name": "contract.json",
+      "encodingFormat": "application/json",
+      "sha256": "e91797de6056f386538e07b912481ef96ad4125729c086dd64aacf1ebadeec55"
+    },
+    {
+      "@id": "evaluation.json",
+      "@type": "File",
+      "name": "evaluation.json",
+      "encodingFormat": "application/json",
+      "sha256": "303f0d29eba051cadec6cf3131ad5376006e1a3b2544698360adb069ed532ba0"
+    },
+    {
+      "@id": "report.html",
+      "@type": "File",
+      "name": "report.html",
+      "encodingFormat": "text/html",
+      "sha256": "6696a3d277f11203e61d66d4e413552b108eec0f943807894a61398092a4b772"
+    }
+  ]
+}

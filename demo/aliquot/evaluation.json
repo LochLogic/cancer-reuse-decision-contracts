@@ -1,0 +1,26 @@
+{
+  "evaluator_version": "0.1.0",
+  "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+  "contract_id": "target-all-aliquot-1",
+  "status": "consistent",
+  "context_sha256": "bfc41d1a87b37978ec209c342d832b1632ca86868946e715e17fb6a40ab7a9cb",
+  "checks": {
+    "cohort": {
+      "status": "consistent",
+      "reason": "0 aliquot units exceed the declared maximum of 1 files.",
+      "unit": "aliquot",
+      "distinct_units": 3227,
+      "files": 3227,
+      "units_over_limit": 0,
+      "policy": "Require at most one selected file per declared unit; do not choose files automatically.",
+      "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+    }
+  },
+  "decision": {
+    "state": "current",
+    "actor": "Demonstration author",
+    "action": "proceed_under_declared_conditions",
+    "reason": "Retain aliquots as labeled rows under the cardinality condition; make no patient-independence claim."
+  },
+  "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+}

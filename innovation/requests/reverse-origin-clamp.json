@@ -1,0 +1,42 @@
+{
+  "id": "reverse-origin-clamp",
+  "source_profile": {
+    "origin": "randomization",
+    "events": [
+      "progression",
+      "death_any"
+    ],
+    "censor_at": [
+      "last_contact"
+    ],
+    "cutoff": null,
+    "unit": "days",
+    "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+    "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+  },
+  "target_profile": {
+    "origin": "diagnosis",
+    "events": [
+      "progression",
+      "death_any"
+    ],
+    "censor_at": [
+      "last_contact"
+    ],
+    "cutoff": null,
+    "unit": "days",
+    "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+    "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+  },
+  "available_components": [
+    "source_elapsed_days",
+    "source_event",
+    "origin_offset"
+  ],
+  "candidate_components": [
+    "progression",
+    "death",
+    "last_contact"
+  ],
+  "expert_baseline": "Adding an offset cannot invert a zero-clamped source endpoint in general."
+}

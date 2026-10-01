@@ -1,0 +1,307 @@
+{
+  "aliquot": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "target-all-aliquot-1",
+    "status": "consistent",
+    "context_sha256": "bfc41d1a87b37978ec209c342d832b1632ca86868946e715e17fb6a40ab7a9cb",
+    "checks": {
+      "cohort": {
+        "status": "consistent",
+        "reason": "0 aliquot units exceed the declared maximum of 1 files.",
+        "unit": "aliquot",
+        "distinct_units": 3227,
+        "files": 3227,
+        "units_over_limit": 0,
+        "policy": "Require at most one selected file per declared unit; do not choose files automatically.",
+        "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "proceed_under_declared_conditions",
+      "reason": "Retain aliquots as labeled rows under the cardinality condition; make no patient-independence claim."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "sample": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "target-all-sample-1",
+    "status": "violated",
+    "context_sha256": "2bb2047ccd9448fe07622dfd5bbb42ebb0c83817c20339f1096d318c061f9506",
+    "checks": {
+      "cohort": {
+        "status": "violated",
+        "reason": "160 sample units exceed the declared maximum of 1 files.",
+        "unit": "sample",
+        "distinct_units": 3064,
+        "files": 3227,
+        "units_over_limit": 160,
+        "policy": "Require at most one selected file per declared unit; do not choose files automatically.",
+        "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "revise_analysis",
+      "reason": "The one-file-per-sample condition is violated; specify a selection or repeated-unit policy before this intended construction."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "labeled-replicates": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "target-all-sample-3",
+    "status": "consistent",
+    "context_sha256": "5533cfb43fdb812bab360f94ffad6a68213ddb51bf334c9b2f2d5850380fe50b",
+    "checks": {
+      "cohort": {
+        "status": "consistent",
+        "reason": "0 sample units exceed the declared maximum of 3 files.",
+        "unit": "sample",
+        "distinct_units": 3064,
+        "files": 3227,
+        "units_over_limit": 0,
+        "policy": "Retain labeled aliquot files; interpret repeated units within the declared structure.",
+        "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "proceed_under_declared_conditions",
+      "reason": "Keep labeled within-sample multiplicity under the declared maximum; this does not establish independent observations."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "primary-marrow": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "target-primary-marrow-aliquot-1",
+    "status": "consistent",
+    "context_sha256": "086b2a6135c38f3f0b1e2ef1ec519b6d99d49e6b0c0f104e241a47c0ef3e0a92",
+    "checks": {
+      "cohort": {
+        "status": "consistent",
+        "reason": "0 aliquot units exceed the declared maximum of 1 files.",
+        "unit": "aliquot",
+        "distinct_units": 1892,
+        "files": 1892,
+        "units_over_limit": 0,
+        "policy": "Require at most one selected file per declared unit; do not choose files automatically.",
+        "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "proceed_under_declared_conditions",
+      "reason": "Use the exact primary-marrow selection at aliquot level under the stated cardinality condition."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "endpoint-summary": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "synthetic-clock-summary",
+    "status": "violated",
+    "context_sha256": "59ee948e131ea53909eaba9824586de8eb3acf7453fbfd70f32ac7cfe39a4568",
+    "checks": {
+      "endpoint": {
+        "status": "violated",
+        "reason": "Target is not uniquely reconstructible from the declared available components.",
+        "missing_target_components": [
+          "death",
+          "last_contact",
+          "progression",
+          "randomization"
+        ],
+        "witness": {
+          "observed_components": {
+            "source_elapsed_days": 60,
+            "source_event": false
+          },
+          "history_a": {
+            "diagnosis": 0,
+            "randomization": 0,
+            "progression": null,
+            "death": null,
+            "death_with_tumor": false,
+            "last_contact": 60,
+            "new_therapy": 80,
+            "last_pretherapy_assessment": 60
+          },
+          "history_b": {
+            "diagnosis": 0,
+            "randomization": 30,
+            "progression": null,
+            "death": null,
+            "death_with_tumor": false,
+            "last_contact": 60,
+            "new_therapy": null,
+            "last_pretherapy_assessment": null
+          },
+          "target_a": {
+            "elapsed_days": 60,
+            "event": false
+          },
+          "target_b": {
+            "elapsed_days": 30,
+            "event": false
+          },
+          "synthetic": true
+        },
+        "scope": "Constructive witness in restricted source/target rules; not a clinical incompatibility certificate.",
+        "histories_compared": 139
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "seek_information",
+      "reason": "Request the missing origin/source components or retain the original endpoint; do not transform an unidentified target."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "endpoint-components": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "synthetic-clock-raw",
+    "status": "consistent",
+    "context_sha256": "8c5e34844231e8bd05c94ea3a985984949d6b4bce69b68e5580aaaf67473cc6b",
+    "checks": {
+      "endpoint": {
+        "status": "consistent",
+        "reason": "Declared components support target rederivation with an existing derivation tool.",
+        "scope": "Component availability is supplied evidence; no raw-data derivation or clinical appropriateness is certified."
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "proceed_under_declared_conditions",
+      "reason": "Declared components support rederivation with an existing package; a clinical analysis still requires its own review."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "endpoint-unknown": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "synthetic-missing-specification",
+    "status": "unknown",
+    "context_sha256": "d44024d262291a761f132e47018d9e9de16a56d0c10abbd7918209299456849d",
+    "checks": {
+      "endpoint": {
+        "status": "unknown",
+        "reason": "Endpoint specification is incomplete."
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "seek_information",
+      "reason": "Clarify the incomplete target specification."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "stale-decision": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "changed-unit-stale-decision",
+    "status": "consistent",
+    "context_sha256": "7413bb1875ee5d0ba6f95e79cb31d00c2a2392f4dd989ecffb60827bb02c2991",
+    "checks": {
+      "cohort": {
+        "status": "consistent",
+        "reason": "0 aliquot units exceed the declared maximum of 3 files.",
+        "unit": "aliquot",
+        "distinct_units": 3227,
+        "files": 3227,
+        "units_over_limit": 0,
+        "policy": "Retain labeled aliquot files; interpret repeated units within the declared structure.",
+        "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+      }
+    },
+    "decision": {
+      "state": "stale",
+      "reason": "Decision inputs or evaluator implementation changed; record a new decision."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  },
+  "combined": {
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+    "contract_id": "synthetic-combined-contract",
+    "status": "violated",
+    "context_sha256": "466e013a82324b015ca609f92babf8205d416360c853aa2276e05fdf9597fb2a",
+    "checks": {
+      "cohort": {
+        "status": "consistent",
+        "reason": "0 case units exceed the declared maximum of 1 files.",
+        "unit": "case",
+        "distinct_units": 7,
+        "files": 7,
+        "units_over_limit": 0,
+        "policy": "One invented record per participant.",
+        "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+      },
+      "endpoint": {
+        "status": "violated",
+        "reason": "Target is not uniquely reconstructible from the declared available components.",
+        "missing_target_components": [
+          "death",
+          "last_contact",
+          "progression",
+          "randomization"
+        ],
+        "witness": {
+          "observed_components": {
+            "source_elapsed_days": 60,
+            "source_event": false
+          },
+          "history_a": {
+            "diagnosis": 0,
+            "randomization": 0,
+            "progression": null,
+            "death": null,
+            "death_with_tumor": false,
+            "last_contact": 60,
+            "new_therapy": 80,
+            "last_pretherapy_assessment": 60
+          },
+          "history_b": {
+            "diagnosis": 0,
+            "randomization": 30,
+            "progression": null,
+            "death": null,
+            "death_with_tumor": false,
+            "last_contact": 60,
+            "new_therapy": null,
+            "last_pretherapy_assessment": null
+          },
+          "target_a": {
+            "elapsed_days": 60,
+            "event": false
+          },
+          "target_b": {
+            "elapsed_days": 30,
+            "event": false
+          },
+          "synthetic": true
+        },
+        "scope": "Constructive witness in restricted source/target rules; not a clinical incompatibility certificate.",
+        "histories_compared": 139
+      }
+    },
+    "decision": {
+      "state": "current",
+      "actor": "Demonstration author",
+      "action": "seek_information",
+      "reason": "Structure is consistent, but endpoint reconstruction is not identified. One passing check cannot authorize the whole reuse decision."
+    },
+    "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+  }
+}

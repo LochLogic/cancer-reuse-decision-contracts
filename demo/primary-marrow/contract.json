@@ -1,0 +1,240 @@
+{
+  "schema_version": "0.1",
+  "id": "target-primary-marrow-aliquot-1",
+  "purpose": "Illustrative aliquot-level file-cardinality decision for a public expression selection.",
+  "selection": {
+    "source": "https://api.gdc.cancer.gov/files",
+    "project": "TARGET-AML",
+    "data_type": "Gene Expression Quantification",
+    "captured_at_utc": "2026-10-01T00:52:13.618793+00:00",
+    "release": "46.0",
+    "query": {
+      "filters": {
+        "op": "and",
+        "content": [
+          {
+            "op": "=",
+            "content": {
+              "field": "cases.project.project_id",
+              "value": "TARGET-AML"
+            }
+          },
+          {
+            "op": "=",
+            "content": {
+              "field": "data_type",
+              "value": "Gene Expression Quantification"
+            }
+          },
+          {
+            "op": "=",
+            "content": {
+              "field": "access",
+              "value": "open"
+            }
+          },
+          {
+            "op": "=",
+            "content": {
+              "field": "cases.samples.sample_type",
+              "value": "Primary Blood Derived Cancer - Bone Marrow"
+            }
+          }
+        ]
+      },
+      "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+      "size": 1000,
+      "sort": "file_id:asc"
+    },
+    "query_sha256": "2df19c8d1af7c3527822d4b7c6a3e29409e00401862a4df202a873db983805fa",
+    "complete": true,
+    "pagination": {
+      "pages": 2,
+      "total": 1892
+    },
+    "status_before": {
+      "commit": "8f7c2a51ab0084b216ad1b62a3fae8b945439c53",
+      "data_release": "Data Release 46.0 - August 10, 2026",
+      "data_release_version": {
+        "major": 46,
+        "minor": 0,
+        "release_date": "2026-08-10"
+      },
+      "status": "OK",
+      "tag": "8.5.0",
+      "version": 1
+    },
+    "status_after": {
+      "commit": "8f7c2a51ab0084b216ad1b62a3fae8b945439c53",
+      "data_release": "Data Release 46.0 - August 10, 2026",
+      "data_release_version": {
+        "major": 46,
+        "minor": 0,
+        "release_date": "2026-08-10"
+      },
+      "status": "OK",
+      "tag": "8.5.0",
+      "version": 1
+    },
+    "observation": {
+      "files": 1892,
+      "file_set_sha256": "a96b34065e3d5929fee97fbe719cc1f21c4da3f6309043a08a22b2dac97dc645",
+      "relationship_sha256": "72cbbceeb4c07e2b235c73bffd80d9a98a41c82185f137cb27c7f9e2c5b66277",
+      "units": {
+        "case": {
+          "histogram": {
+            "1": 1685,
+            "2": 99,
+            "3": 3
+          },
+          "count": 1787,
+          "files_without_unit": 0,
+          "files_with_multiple_units": 0
+        },
+        "sample": {
+          "histogram": {
+            "1": 1685,
+            "2": 99,
+            "3": 3
+          },
+          "count": 1787,
+          "files_without_unit": 0,
+          "files_with_multiple_units": 0
+        },
+        "aliquot": {
+          "histogram": {
+            "1": 1892
+          },
+          "count": 1892,
+          "files_without_unit": 0,
+          "files_with_multiple_units": 0
+        }
+      }
+    },
+    "independent_tsv_agrees": true,
+    "visibility": "aggregate_only",
+    "replay_limit": "An exact current selection can be refetched and compared with the hash; historical source availability is not guaranteed.",
+    "requests": [
+      {
+        "url": "https://api.gdc.cancer.gov/status",
+        "payload": null,
+        "bytes": 221,
+        "sha256": "a8b1c69f9cfc678486e1c897aee6d878f47fab9cb4c60eb6818598bbe30a7139"
+      },
+      {
+        "url": "https://api.gdc.cancer.gov/files",
+        "payload": {
+          "filters": {
+            "op": "and",
+            "content": [
+              {
+                "op": "=",
+                "content": {
+                  "field": "cases.project.project_id",
+                  "value": "TARGET-AML"
+                }
+              },
+              {
+                "op": "=",
+                "content": {
+                  "field": "data_type",
+                  "value": "Gene Expression Quantification"
+                }
+              },
+              {
+                "op": "=",
+                "content": {
+                  "field": "access",
+                  "value": "open"
+                }
+              },
+              {
+                "op": "=",
+                "content": {
+                  "field": "cases.samples.sample_type",
+                  "value": "Primary Blood Derived Cancer - Bone Marrow"
+                }
+              }
+            ]
+          },
+          "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+          "size": 1000,
+          "sort": "file_id:asc",
+          "from": 0
+        },
+        "bytes": 344406,
+        "sha256": "33328b88f21294a7f9f9b5e1da6e82c83a36f5d574bda069f9f013604083fbe4"
+      },
+      {
+        "url": "https://api.gdc.cancer.gov/files",
+        "payload": {
+          "filters": {
+            "op": "and",
+            "content": [
+              {
+                "op": "=",
+                "content": {
+                  "field": "cases.project.project_id",
+                  "value": "TARGET-AML"
+                }
+              },
+              {
+                "op": "=",
+                "content": {
+                  "field": "data_type",
+                  "value": "Gene Expression Quantification"
+                }
+              },
+              {
+                "op": "=",
+                "content": {
+                  "field": "access",
+                  "value": "open"
+                }
+              },
+              {
+                "op": "=",
+                "content": {
+                  "field": "cases.samples.sample_type",
+                  "value": "Primary Blood Derived Cancer - Bone Marrow"
+                }
+              }
+            ]
+          },
+          "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+          "size": 1000,
+          "sort": "file_id:asc",
+          "from": 1000
+        },
+        "bytes": 307660,
+        "sha256": "b5831a4c7eacfba102027793f6b34b1e862406964319da3021f89c440cbcc267"
+      },
+      {
+        "url": "https://api.gdc.cancer.gov/files?filters=%7B%22op%22%3A+%22and%22%2C+%22content%22%3A+%5B%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22cases.project.project_id%22%2C+%22value%22%3A+%22TARGET-AML%22%7D%7D%2C+%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22data_type%22%2C+%22value%22%3A+%22Gene+Expression+Quantification%22%7D%7D%2C+%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22access%22%2C+%22value%22%3A+%22open%22%7D%7D%2C+%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22cases.samples.sample_type%22%2C+%22value%22%3A+%22Primary+Blood+Derived+Cancer+-+Bone+Marrow%22%7D%7D%5D%7D&fields=file_id%2Canalysis.workflow_type%2Ccases.submitter_id%2Ccases.samples.submitter_id%2Ccases.samples.portions.analytes.aliquots.submitter_id&size=10000&sort=file_id%3Aasc&format=TSV",
+        "payload": null,
+        "bytes": 290551,
+        "sha256": "2b4ef18e2de9762f297909ae78b1ed550caabea01318f285082c8cfff957b1c4"
+      },
+      {
+        "url": "https://api.gdc.cancer.gov/status",
+        "payload": null,
+        "bytes": 221,
+        "sha256": "a8b1c69f9cfc678486e1c897aee6d878f47fab9cb4c60eb6818598bbe30a7139"
+      }
+    ]
+  },
+  "cohort": {
+    "unit": "aliquot",
+    "max_files_per_unit": 1,
+    "policy": "Require at most one selected file per declared unit; do not choose files automatically.",
+    "evidence_binding": "Aggregate metadata independently reconciled against TSV; cardinality only."
+  },
+  "decision": {
+    "actor": "Demonstration author",
+    "action": "proceed_under_declared_conditions",
+    "reason": "Use the exact primary-marrow selection at aliquot level under the stated cardinality condition.",
+    "context_sha256": "086b2a6135c38f3f0b1e2ef1ec519b6d99d49e6b0c0f104e241a47c0ef3e0a92",
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007"
+  }
+}

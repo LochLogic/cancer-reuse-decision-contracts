@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cancer Reuse Decision Contract</title><style>body{max-width:950px;margin:40px auto;padding:0 24px;background:#f4f7f6;color:#16343d;font:17px/1.5 system-ui}h1{font-size:34px}section{background:white;border:1px solid #ccdeda;border-radius:12px;padding:22px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}summary{cursor:pointer;color:#006966}small{color:#52686d}</style><h1>Cancer Reuse Decision Contract</h1><p>Synthetic illustration: can a diagnosis-based endpoint summary support a randomization-based elapsed-time target?</p><section><h2>Checked conditions: unknown</h2><p>Recorded decision: current</p><p><b>Recorded action: Seek missing information</b><br>Recorded by: Demonstration author</p><p>Clarify the incomplete target specification.</p><small>Each result applies to its stated scope. It does not approve a scientific design.</small></section><section><h2>Endpoint / unknown</h2><p>Endpoint specification is incomplete.</p><details><summary>Evidence and scope</summary><pre>{
+  &quot;status&quot;: &quot;unknown&quot;,
+  &quot;reason&quot;: &quot;Endpoint specification is incomplete.&quot;
+}</pre></details></section><details><summary>Complete portable contract</summary><pre>{
+  &quot;schema_version&quot;: &quot;0.1&quot;,
+  &quot;id&quot;: &quot;synthetic-missing-specification&quot;,
+  &quot;purpose&quot;: &quot;Synthetic illustration: can a diagnosis-based endpoint summary support a randomization-based elapsed-time target?&quot;,
+  &quot;endpoint&quot;: {
+    &quot;source_profile&quot;: {
+      &quot;origin&quot;: &quot;diagnosis&quot;,
+      &quot;events&quot;: [
+        &quot;progression&quot;,
+        &quot;death_any&quot;
+      ],
+      &quot;censor_at&quot;: [
+        &quot;last_contact&quot;
+      ],
+      &quot;cutoff&quot;: null,
+      &quot;unit&quot;: &quot;days&quot;,
+      &quot;definition_source&quot;: &quot;https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html&quot;,
+      &quot;definition_scope&quot;: &quot;Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition.&quot;
+    },
+    &quot;target_profile&quot;: {
+      &quot;origin&quot;: &quot;randomization&quot;,
+      &quot;events&quot;: [
+        &quot;progression&quot;,
+        &quot;death_any&quot;
+      ],
+      &quot;censor_at&quot;: [
+        &quot;last_contact&quot;
+      ],
+      &quot;unit&quot;: &quot;days&quot;,
+      &quot;definition_source&quot;: &quot;https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html&quot;,
+      &quot;definition_scope&quot;: &quot;Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition.&quot;
+    },
+    &quot;available_components&quot;: [
+      &quot;source_elapsed_days&quot;,
+      &quot;source_event&quot;
+    ],
+    &quot;component_evidence&quot;: &quot;Declared components of an invented fixture. No patient data supplied.&quot;,
+    &quot;binding&quot;: &quot;Synthetic rule binding; source citations explain mechanisms, not clinical approval.&quot;
+  },
+  &quot;decision&quot;: {
+    &quot;actor&quot;: &quot;Demonstration author&quot;,
+    &quot;action&quot;: &quot;seek_information&quot;,
+    &quot;reason&quot;: &quot;Clarify the incomplete target specification.&quot;,
+    &quot;context_sha256&quot;: &quot;d44024d262291a761f132e47018d9e9de16a56d0c10abbd7918209299456849d&quot;,
+    &quot;evaluator_version&quot;: &quot;0.1.0&quot;,
+    &quot;evaluator_sha256&quot;: &quot;6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007&quot;
+  }
+}</pre></details><p><small>Local report. Replay with the reference evaluator to recompute checks and decision validity; this HTML is a captured view.</small></p></html>

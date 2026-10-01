@@ -1,0 +1,411 @@
+{
+  "jsonschema_version": "4.26.0",
+  "rocrate_version": "0.14.2",
+  "cases": [
+    {
+      "example": "aliquot",
+      "baseline": {
+        "data_valid": true,
+        "reason": "Schema and independently programmed cardinality reconciliation."
+      },
+      "contract": {
+        "status": "consistent",
+        "decision": "current"
+      }
+    },
+    {
+      "example": "sample",
+      "baseline": {
+        "data_valid": false,
+        "reason": "Declared histogram/mapping condition failed."
+      },
+      "contract": {
+        "status": "violated",
+        "decision": "current"
+      }
+    },
+    {
+      "example": "labeled-replicates",
+      "baseline": {
+        "data_valid": true,
+        "reason": "Schema and independently programmed cardinality reconciliation."
+      },
+      "contract": {
+        "status": "consistent",
+        "decision": "current"
+      }
+    },
+    {
+      "example": "primary-marrow",
+      "baseline": {
+        "data_valid": true,
+        "reason": "Schema and independently programmed cardinality reconciliation."
+      },
+      "contract": {
+        "status": "consistent",
+        "decision": "current"
+      }
+    },
+    {
+      "example": "endpoint-summary",
+      "baseline": {
+        "data_valid": null,
+        "reason": "No selection table in this synthetic endpoint fixture."
+      },
+      "contract": {
+        "status": "violated",
+        "decision": "current"
+      }
+    },
+    {
+      "example": "endpoint-components",
+      "baseline": {
+        "data_valid": null,
+        "reason": "No selection table in this synthetic endpoint fixture."
+      },
+      "contract": {
+        "status": "consistent",
+        "decision": "current"
+      }
+    },
+    {
+      "example": "endpoint-unknown",
+      "baseline": {
+        "data_valid": null,
+        "reason": "No selection table in this synthetic endpoint fixture."
+      },
+      "contract": {
+        "status": "unknown",
+        "decision": "current"
+      }
+    },
+    {
+      "example": "stale-decision",
+      "baseline": {
+        "data_valid": true,
+        "reason": "Schema and independently programmed cardinality reconciliation."
+      },
+      "contract": {
+        "status": "consistent",
+        "decision": "stale"
+      }
+    },
+    {
+      "example": "combined",
+      "baseline": {
+        "data_valid": true,
+        "reason": "Schema and independently programmed cardinality reconciliation."
+      },
+      "contract": {
+        "status": "violated",
+        "decision": "current"
+      }
+    }
+  ],
+  "crate_reader_checks": [
+    {
+      "example": "aliquot",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "sample",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "labeled-replicates",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "primary-marrow",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "endpoint-summary",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "endpoint-components",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "endpoint-unknown",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "stale-decision",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    },
+    {
+      "example": "combined",
+      "rocrate_python_reader_loaded": true,
+      "files": 3,
+      "scope": "Reader structure and local parts only; not an independent SHACL conformance certification."
+    }
+  ],
+  "reference_alignment": {
+    "runtime": {
+      "R": "4.6.0",
+      "admiral": "1.4.2"
+    },
+    "comparisons": [
+      {
+        "history": "H1",
+        "profile": "DIAG_ANY_DEATH",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H1",
+        "profile": "RAND_ANY_DEATH",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H1",
+        "profile": "DIAG_DEATH_WITH_TUMOR",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H1",
+        "profile": "RAND_THERAPY_CUTOFF",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H2",
+        "profile": "DIAG_ANY_DEATH",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H2",
+        "profile": "RAND_ANY_DEATH",
+        "result": {
+          "elapsed_days": 70,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H2",
+        "profile": "DIAG_DEATH_WITH_TUMOR",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H2",
+        "profile": "RAND_THERAPY_CUTOFF",
+        "result": {
+          "elapsed_days": 70,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H3",
+        "profile": "DIAG_ANY_DEATH",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H3",
+        "profile": "RAND_ANY_DEATH",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H3",
+        "profile": "DIAG_DEATH_WITH_TUMOR",
+        "result": {
+          "elapsed_days": 100,
+          "event": false
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H3",
+        "profile": "RAND_THERAPY_CUTOFF",
+        "result": {
+          "elapsed_days": 100,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H4",
+        "profile": "DIAG_ANY_DEATH",
+        "result": {
+          "elapsed_days": 120,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H4",
+        "profile": "RAND_ANY_DEATH",
+        "result": {
+          "elapsed_days": 120,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H4",
+        "profile": "DIAG_DEATH_WITH_TUMOR",
+        "result": {
+          "elapsed_days": 120,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H4",
+        "profile": "RAND_THERAPY_CUTOFF",
+        "result": {
+          "elapsed_days": 60,
+          "event": false
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H5",
+        "profile": "DIAG_ANY_DEATH",
+        "result": {
+          "elapsed_days": 180,
+          "event": false
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H5",
+        "profile": "RAND_ANY_DEATH",
+        "result": {
+          "elapsed_days": 180,
+          "event": false
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H5",
+        "profile": "DIAG_DEATH_WITH_TUMOR",
+        "result": {
+          "elapsed_days": 180,
+          "event": false
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H5",
+        "profile": "RAND_THERAPY_CUTOFF",
+        "result": {
+          "elapsed_days": 180,
+          "event": false
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H6",
+        "profile": "DIAG_ANY_DEATH",
+        "result": null,
+        "admiral_match": true
+      },
+      {
+        "history": "H6",
+        "profile": "RAND_ANY_DEATH",
+        "result": null,
+        "admiral_match": true
+      },
+      {
+        "history": "H6",
+        "profile": "DIAG_DEATH_WITH_TUMOR",
+        "result": null,
+        "admiral_match": true
+      },
+      {
+        "history": "H6",
+        "profile": "RAND_THERAPY_CUTOFF",
+        "result": null,
+        "admiral_match": true
+      },
+      {
+        "history": "H7",
+        "profile": "DIAG_ANY_DEATH",
+        "result": {
+          "elapsed_days": 150,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H7",
+        "profile": "RAND_ANY_DEATH",
+        "result": {
+          "elapsed_days": 150,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H7",
+        "profile": "DIAG_DEATH_WITH_TUMOR",
+        "result": {
+          "elapsed_days": 150,
+          "event": true
+        },
+        "admiral_match": true
+      },
+      {
+        "history": "H7",
+        "profile": "RAND_THERAPY_CUTOFF",
+        "result": {
+          "elapsed_days": 150,
+          "event": true
+        },
+        "admiral_match": true
+      }
+    ],
+    "scope": "Seven synthetic histories, four mechanism profiles; not full clinical endpoint implementations."
+  },
+  "conclusion": "Cardinality checking is not new. Proposed addition is an application profile preserving target/use, bounded reconstruction explanation, recorded choice and its validity conditions. RO-Crate and validation tools can host this extension; no algorithmic superiority, tool incapability, user efficiency or universal clinical validity claim."
+}

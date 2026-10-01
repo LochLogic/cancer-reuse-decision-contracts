@@ -1,0 +1,452 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selection": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "release": {
+          "type": "string",
+          "minLength": 1
+        },
+        "captured_at_utc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visibility": {
+          "const": "aggregate_only"
+        },
+        "query": {
+          "type": "object"
+        },
+        "query_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "complete": {
+          "type": "boolean"
+        },
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "total"
+          ],
+          "additionalProperties": true
+        },
+        "observation": {
+          "type": "object",
+          "properties": {
+            "files": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "file_set_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "relationship_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "units": {
+              "type": "object",
+              "properties": {
+                "case": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "histogram": {
+                      "type": "object",
+                      "patternProperties": {
+                        "^[1-9][0-9]*$": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "files_without_unit": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "files_with_multiple_units": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "histogram",
+                    "files_without_unit",
+                    "files_with_multiple_units"
+                  ],
+                  "additionalProperties": true
+                },
+                "sample": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "histogram": {
+                      "type": "object",
+                      "patternProperties": {
+                        "^[1-9][0-9]*$": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "files_without_unit": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "files_with_multiple_units": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "histogram",
+                    "files_without_unit",
+                    "files_with_multiple_units"
+                  ],
+                  "additionalProperties": true
+                },
+                "aliquot": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "histogram": {
+                      "type": "object",
+                      "patternProperties": {
+                        "^[1-9][0-9]*$": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "files_without_unit": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "files_with_multiple_units": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "histogram",
+                    "files_without_unit",
+                    "files_with_multiple_units"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "files",
+            "file_set_sha256",
+            "relationship_sha256",
+            "units"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "source",
+        "project",
+        "release",
+        "captured_at_utc",
+        "visibility",
+        "query",
+        "query_sha256",
+        "complete",
+        "pagination",
+        "observation"
+      ],
+      "additionalProperties": true
+    },
+    "cohort": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max_files_per_unit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_binding": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "unit",
+        "max_files_per_unit",
+        "policy",
+        "evidence_binding"
+      ],
+      "additionalProperties": false
+    },
+    "endpoint": {
+      "type": "object",
+      "properties": {
+        "source_profile": {
+          "type": "object",
+          "properties": {
+            "origin": {
+              "enum": [
+                "diagnosis",
+                "randomization"
+              ]
+            },
+            "events": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "enum": [
+                  "progression",
+                  "death_any",
+                  "death_with_tumor"
+                ]
+              }
+            },
+            "censor_at": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "enum": [
+                  "last_contact",
+                  "death_without_tumor",
+                  "last_pretherapy_assessment"
+                ]
+              }
+            },
+            "cutoff": {
+              "enum": [
+                null,
+                "new_therapy"
+              ]
+            },
+            "unit": {
+              "const": "days"
+            },
+            "definition_source": {
+              "type": "string",
+              "minLength": 1
+            },
+            "definition_scope": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "target_profile": {
+          "type": "object",
+          "properties": {
+            "origin": {
+              "enum": [
+                "diagnosis",
+                "randomization"
+              ]
+            },
+            "events": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "enum": [
+                  "progression",
+                  "death_any",
+                  "death_with_tumor"
+                ]
+              }
+            },
+            "censor_at": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "enum": [
+                  "last_contact",
+                  "death_without_tumor",
+                  "last_pretherapy_assessment"
+                ]
+              }
+            },
+            "cutoff": {
+              "enum": [
+                null,
+                "new_therapy"
+              ]
+            },
+            "unit": {
+              "const": "days"
+            },
+            "definition_source": {
+              "type": "string",
+              "minLength": 1
+            },
+            "definition_scope": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "available_components": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "source_elapsed_days",
+              "source_event",
+              "diagnosis",
+              "randomization",
+              "progression",
+              "death",
+              "death_with_tumor",
+              "last_contact",
+              "new_therapy",
+              "last_pretherapy_assessment"
+            ]
+          }
+        },
+        "component_evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "binding": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_profile",
+        "target_profile",
+        "available_components",
+        "component_evidence",
+        "binding"
+      ],
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "enum": [
+            "proceed_under_declared_conditions",
+            "revise_analysis",
+            "seek_information"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "evaluator_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluator_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "actor",
+        "action",
+        "reason",
+        "context_sha256",
+        "evaluator_version",
+        "evaluator_sha256"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "purpose"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cancer Reuse Decision Contract 0.1 structural schema",
+  "description": "Structure only. Incomplete profiles are allowed so the evaluator can report unknown; arithmetic, reconstruction and decision validity are evaluated by contracts.py.",
+  "anyOf": [
+    {
+      "required": [
+        "cohort",
+        "selection"
+      ]
+    },
+    {
+      "required": [
+        "endpoint"
+      ]
+    }
+  ],
+  "dependentRequired": {
+    "cohort": [
+      "selection"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "evaluator_version": "0.1.0",
+  "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+  "contract_id": "synthetic-missing-specification",
+  "status": "unknown",
+  "context_sha256": "d44024d262291a761f132e47018d9e9de16a56d0c10abbd7918209299456849d",
+  "checks": {
+    "endpoint": {
+      "status": "unknown",
+      "reason": "Endpoint specification is incomplete."
+    }
+  },
+  "decision": {
+    "state": "current",
+    "actor": "Demonstration author",
+    "action": "seek_information",
+    "reason": "Clarify the incomplete target specification."
+  },
+  "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+}

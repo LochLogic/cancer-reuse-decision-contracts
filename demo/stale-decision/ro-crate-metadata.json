@@ -1,0 +1,57 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "changed-unit-stale-decision",
+      "description": "Illustrative sample-level file-cardinality decision for a public expression selection.",
+      "datePublished": "2026-09-30",
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT"
+      },
+      "hasPart": [
+        {
+          "@id": "contract.json"
+        },
+        {
+          "@id": "evaluation.json"
+        },
+        {
+          "@id": "report.html"
+        }
+      ]
+    },
+    {
+      "@id": "contract.json",
+      "@type": "File",
+      "name": "contract.json",
+      "encodingFormat": "application/json",
+      "sha256": "1fc281fd4a1bec78178bccec7e254ea36ac22980409c2eff77840e680e767004"
+    },
+    {
+      "@id": "evaluation.json",
+      "@type": "File",
+      "name": "evaluation.json",
+      "encodingFormat": "application/json",
+      "sha256": "00b1da247055265280a068fb702d57bf526e3ba8a1db57f234a9f8ae47d9e31a"
+    },
+    {
+      "@id": "report.html",
+      "@type": "File",
+      "name": "report.html",
+      "encodingFormat": "text/html",
+      "sha256": "703bca9928bd8d8b4a422e6738f558f2078f57af1d077fdd15fc5de3f53b3f0e"
+    }
+  ]
+}

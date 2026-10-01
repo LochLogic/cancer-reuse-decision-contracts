@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cancer Reuse Decision Contract</title><style>body{max-width:950px;margin:40px auto;padding:0 24px;background:#f4f7f6;color:#16343d;font:17px/1.5 system-ui}h1{font-size:34px}section{background:white;border:1px solid #ccdeda;border-radius:12px;padding:22px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}summary{cursor:pointer;color:#006966}small{color:#52686d}</style><h1>Cancer Reuse Decision Contract</h1><p>Synthetic illustration: can a diagnosis-based endpoint summary support a randomization-based elapsed-time target?</p><section><h2>Checked conditions: violated</h2><p>Recorded decision: current</p><p><b>Recorded action: Seek missing information</b><br>Recorded by: Demonstration author</p><p>Request the missing origin/source components or retain the original endpoint; do not transform an unidentified target.</p><small>Each result applies to its stated scope. It does not approve a scientific design.</small></section><section><h2>Endpoint / violated</h2><p>Target is not uniquely reconstructible from the declared available components.</p><p><b>Two invented histories, the same available information.</b> The shared summary is 60 days, censored. All other declared available components also agree.</p><p>Requested target in history A: <b>60 elapsed days, censored</b>.<br>Requested target in history B: <b>30 elapsed days, censored</b>.</p><p>These different targets demonstrate why additional information is needed under the specified rules.</p><details><summary>Evidence and scope</summary><pre>{
+  &quot;status&quot;: &quot;violated&quot;,
+  &quot;reason&quot;: &quot;Target is not uniquely reconstructible from the declared available components.&quot;,
+  &quot;missing_target_components&quot;: [
+    &quot;death&quot;,
+    &quot;last_contact&quot;,
+    &quot;progression&quot;,
+    &quot;randomization&quot;
+  ],
+  &quot;witness&quot;: {
+    &quot;observed_components&quot;: {
+      &quot;source_elapsed_days&quot;: 60,
+      &quot;source_event&quot;: false
+    },
+    &quot;history_a&quot;: {
+      &quot;diagnosis&quot;: 0,
+      &quot;randomization&quot;: 0,
+      &quot;progression&quot;: null,
+      &quot;death&quot;: null,
+      &quot;death_with_tumor&quot;: false,
+      &quot;last_contact&quot;: 60,
+      &quot;new_therapy&quot;: 80,
+      &quot;last_pretherapy_assessment&quot;: 60
+    },
+    &quot;history_b&quot;: {
+      &quot;diagnosis&quot;: 0,
+      &quot;randomization&quot;: 30,
+      &quot;progression&quot;: null,
+      &quot;death&quot;: null,
+      &quot;death_with_tumor&quot;: false,
+      &quot;last_contact&quot;: 60,
+      &quot;new_therapy&quot;: null,
+      &quot;last_pretherapy_assessment&quot;: null
+    },
+    &quot;target_a&quot;: {
+      &quot;elapsed_days&quot;: 60,
+      &quot;event&quot;: false
+    },
+    &quot;target_b&quot;: {
+      &quot;elapsed_days&quot;: 30,
+      &quot;event&quot;: false
+    },
+    &quot;synthetic&quot;: true
+  },
+  &quot;scope&quot;: &quot;Constructive witness in restricted source/target rules; not a clinical incompatibility certificate.&quot;,
+  &quot;histories_compared&quot;: 139
+}</pre></details></section><details><summary>Complete portable contract</summary><pre>{
+  &quot;schema_version&quot;: &quot;0.1&quot;,
+  &quot;id&quot;: &quot;synthetic-clock-summary&quot;,
+  &quot;purpose&quot;: &quot;Synthetic illustration: can a diagnosis-based endpoint summary support a randomization-based elapsed-time target?&quot;,
+  &quot;endpoint&quot;: {
+    &quot;source_profile&quot;: {
+      &quot;origin&quot;: &quot;diagnosis&quot;,
+      &quot;events&quot;: [
+        &quot;progression&quot;,
+        &quot;death_any&quot;
+      ],
+      &quot;censor_at&quot;: [
+        &quot;last_contact&quot;
+      ],
+      &quot;cutoff&quot;: null,
+      &quot;unit&quot;: &quot;days&quot;,
+      &quot;definition_source&quot;: &quot;https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html&quot;,
+      &quot;definition_scope&quot;: &quot;Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition.&quot;
+    },
+    &quot;target_profile&quot;: {
+      &quot;origin&quot;: &quot;randomization&quot;,
+      &quot;events&quot;: [
+        &quot;progression&quot;,
+        &quot;death_any&quot;
+      ],
+      &quot;censor_at&quot;: [
+        &quot;last_contact&quot;
+      ],
+      &quot;cutoff&quot;: null,
+      &quot;unit&quot;: &quot;days&quot;,
+      &quot;definition_source&quot;: &quot;https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html&quot;,
+      &quot;definition_scope&quot;: &quot;Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition.&quot;
+    },
+    &quot;available_components&quot;: [
+      &quot;source_elapsed_days&quot;,
+      &quot;source_event&quot;
+    ],
+    &quot;component_evidence&quot;: &quot;Declared components of an invented fixture. No patient data supplied.&quot;,
+    &quot;binding&quot;: &quot;Synthetic rule binding; source citations explain mechanisms, not clinical approval.&quot;
+  },
+  &quot;decision&quot;: {
+    &quot;actor&quot;: &quot;Demonstration author&quot;,
+    &quot;action&quot;: &quot;seek_information&quot;,
+    &quot;reason&quot;: &quot;Request the missing origin/source components or retain the original endpoint; do not transform an unidentified target.&quot;,
+    &quot;context_sha256&quot;: &quot;59ee948e131ea53909eaba9824586de8eb3acf7453fbfd70f32ac7cfe39a4568&quot;,
+    &quot;evaluator_version&quot;: &quot;0.1.0&quot;,
+    &quot;evaluator_sha256&quot;: &quot;6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007&quot;
+  }
+}</pre></details><p><small>Local report. Replay with the reference evaluator to recompute checks and decision validity; this HTML is a captured view.</small></p></html>

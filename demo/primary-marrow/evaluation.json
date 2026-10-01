@@ -1,0 +1,26 @@
+{
+  "evaluator_version": "0.1.0",
+  "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+  "contract_id": "target-primary-marrow-aliquot-1",
+  "status": "consistent",
+  "context_sha256": "086b2a6135c38f3f0b1e2ef1ec519b6d99d49e6b0c0f104e241a47c0ef3e0a92",
+  "checks": {
+    "cohort": {
+      "status": "consistent",
+      "reason": "0 aliquot units exceed the declared maximum of 1 files.",
+      "unit": "aliquot",
+      "distinct_units": 1892,
+      "files": 1892,
+      "units_over_limit": 0,
+      "policy": "Require at most one selected file per declared unit; do not choose files automatically.",
+      "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+    }
+  },
+  "decision": {
+    "state": "current",
+    "actor": "Demonstration author",
+    "action": "proceed_under_declared_conditions",
+    "reason": "Use the exact primary-marrow selection at aliquot level under the stated cardinality condition."
+  },
+  "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+}

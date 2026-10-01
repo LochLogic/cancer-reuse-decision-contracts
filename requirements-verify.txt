@@ -1,0 +1,6 @@
+# Optional. The core evaluator (contracts.py) needs only the Python standard library.
+z3-solver==4.15.4.0
+cvc5==1.3.1
+jsonschema==4.26.0
+rocrate==0.14.2
+openpyxl>=3.1

@@ -1,0 +1,42 @@
+{
+  "id": "coarsened-time",
+  "source_profile": {
+    "origin": "diagnosis",
+    "events": [
+      "progression",
+      "death_any"
+    ],
+    "censor_at": [
+      "last_contact"
+    ],
+    "cutoff": null,
+    "unit": "days",
+    "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+    "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+  },
+  "target_profile": {
+    "origin": "diagnosis",
+    "events": [
+      "progression",
+      "death_any"
+    ],
+    "censor_at": [
+      "last_contact"
+    ],
+    "cutoff": null,
+    "unit": "days",
+    "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+    "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+  },
+  "available_components": [
+    "source_30day_bin",
+    "source_event"
+  ],
+  "candidate_components": [
+    "within_bin_day",
+    "progression",
+    "death",
+    "last_contact"
+  ],
+  "expert_baseline": "Quotient plus remainder reconstructs elapsed days; a 30-day bin alone does not."
+}

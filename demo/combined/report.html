@@ -1,0 +1,146 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cancer Reuse Decision Contract</title><style>body{max-width:950px;margin:40px auto;padding:0 24px;background:#f4f7f6;color:#16343d;font:17px/1.5 system-ui}h1{font-size:34px}section{background:white;border:1px solid #ccdeda;border-radius:12px;padding:22px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}summary{cursor:pointer;color:#006966}small{color:#52686d}</style><h1>Cancer Reuse Decision Contract</h1><p>Synthetic seven-participant demonstration: check both one-file-per-participant structure and endpoint reconstruction before recording one reuse decision.</p><section><h2>Checked conditions: violated</h2><p>Recorded decision: current</p><p><b>Recorded action: Seek missing information</b><br>Recorded by: Demonstration author</p><p>Structure is consistent, but endpoint reconstruction is not identified. One passing check cannot authorize the whole reuse decision.</p><small>Each result applies to its stated scope. It does not approve a scientific design.</small></section><section><h2>Cohort / consistent</h2><p>0 case units exceed the declared maximum of 1 files.</p><p>7 selected files; 7 distinct case units. Policy: One invented record per participant.</p><details><summary>Evidence and scope</summary><pre>{
+  &quot;status&quot;: &quot;consistent&quot;,
+  &quot;reason&quot;: &quot;0 case units exceed the declared maximum of 1 files.&quot;,
+  &quot;unit&quot;: &quot;case&quot;,
+  &quot;distinct_units&quot;: 7,
+  &quot;files&quot;: 7,
+  &quot;units_over_limit&quot;: 0,
+  &quot;policy&quot;: &quot;One invented record per participant.&quot;,
+  &quot;scope&quot;: &quot;Cardinality consistency only; no independence, eligibility or specimen-quality inference.&quot;
+}</pre></details></section><section><h2>Endpoint / violated</h2><p>Target is not uniquely reconstructible from the declared available components.</p><p><b>Two invented histories, the same available information.</b> The shared summary is 60 days, censored. All other declared available components also agree.</p><p>Requested target in history A: <b>60 elapsed days, censored</b>.<br>Requested target in history B: <b>30 elapsed days, censored</b>.</p><p>These different targets demonstrate why additional information is needed under the specified rules.</p><details><summary>Evidence and scope</summary><pre>{
+  &quot;status&quot;: &quot;violated&quot;,
+  &quot;reason&quot;: &quot;Target is not uniquely reconstructible from the declared available components.&quot;,
+  &quot;missing_target_components&quot;: [
+    &quot;death&quot;,
+    &quot;last_contact&quot;,
+    &quot;progression&quot;,
+    &quot;randomization&quot;
+  ],
+  &quot;witness&quot;: {
+    &quot;observed_components&quot;: {
+      &quot;source_elapsed_days&quot;: 60,
+      &quot;source_event&quot;: false
+    },
+    &quot;history_a&quot;: {
+      &quot;diagnosis&quot;: 0,
+      &quot;randomization&quot;: 0,
+      &quot;progression&quot;: null,
+      &quot;death&quot;: null,
+      &quot;death_with_tumor&quot;: false,
+      &quot;last_contact&quot;: 60,
+      &quot;new_therapy&quot;: 80,
+      &quot;last_pretherapy_assessment&quot;: 60
+    },
+    &quot;history_b&quot;: {
+      &quot;diagnosis&quot;: 0,
+      &quot;randomization&quot;: 30,
+      &quot;progression&quot;: null,
+      &quot;death&quot;: null,
+      &quot;death_with_tumor&quot;: false,
+      &quot;last_contact&quot;: 60,
+      &quot;new_therapy&quot;: null,
+      &quot;last_pretherapy_assessment&quot;: null
+    },
+    &quot;target_a&quot;: {
+      &quot;elapsed_days&quot;: 60,
+      &quot;event&quot;: false
+    },
+    &quot;target_b&quot;: {
+      &quot;elapsed_days&quot;: 30,
+      &quot;event&quot;: false
+    },
+    &quot;synthetic&quot;: true
+  },
+  &quot;scope&quot;: &quot;Constructive witness in restricted source/target rules; not a clinical incompatibility certificate.&quot;,
+  &quot;histories_compared&quot;: 139
+}</pre></details></section><details><summary>Complete portable contract</summary><pre>{
+  &quot;schema_version&quot;: &quot;0.1&quot;,
+  &quot;id&quot;: &quot;synthetic-combined-contract&quot;,
+  &quot;purpose&quot;: &quot;Synthetic seven-participant demonstration: check both one-file-per-participant structure and endpoint reconstruction before recording one reuse decision.&quot;,
+  &quot;endpoint&quot;: {
+    &quot;source_profile&quot;: {
+      &quot;origin&quot;: &quot;diagnosis&quot;,
+      &quot;events&quot;: [
+        &quot;progression&quot;,
+        &quot;death_any&quot;
+      ],
+      &quot;censor_at&quot;: [
+        &quot;last_contact&quot;
+      ],
+      &quot;cutoff&quot;: null,
+      &quot;unit&quot;: &quot;days&quot;,
+      &quot;definition_source&quot;: &quot;https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html&quot;,
+      &quot;definition_scope&quot;: &quot;Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition.&quot;
+    },
+    &quot;target_profile&quot;: {
+      &quot;origin&quot;: &quot;randomization&quot;,
+      &quot;events&quot;: [
+        &quot;progression&quot;,
+        &quot;death_any&quot;
+      ],
+      &quot;censor_at&quot;: [
+        &quot;last_contact&quot;
+      ],
+      &quot;cutoff&quot;: null,
+      &quot;unit&quot;: &quot;days&quot;,
+      &quot;definition_source&quot;: &quot;https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html&quot;,
+      &quot;definition_scope&quot;: &quot;Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition.&quot;
+    },
+    &quot;available_components&quot;: [
+      &quot;source_elapsed_days&quot;,
+      &quot;source_event&quot;
+    ],
+    &quot;component_evidence&quot;: &quot;Declared components of an invented fixture. No patient data supplied.&quot;,
+    &quot;binding&quot;: &quot;Synthetic rule binding; source citations explain mechanisms, not clinical approval.&quot;
+  },
+  &quot;selection&quot;: {
+    &quot;source&quot;: &quot;Invented fixture&quot;,
+    &quot;project&quot;: &quot;SYNTHETIC&quot;,
+    &quot;data_type&quot;: &quot;Gene Expression Quantification&quot;,
+    &quot;captured_at_utc&quot;: &quot;2026-10-01T00:52:10.312703+00:00&quot;,
+    &quot;release&quot;: &quot;fixture-1&quot;,
+    &quot;query&quot;: {
+      &quot;fixture&quot;: &quot;seven-invented-participants&quot;
+    },
+    &quot;query_sha256&quot;: &quot;51edfde2f63d1c7a9a80a8c3c362fa0f6dbfee8441114bb7bf5b096a7e3701b7&quot;,
+    &quot;complete&quot;: true,
+    &quot;pagination&quot;: {
+      &quot;total&quot;: 7
+    },
+    &quot;status_before&quot;: {
+      &quot;fixture&quot;: &quot;synthetic&quot;
+    },
+    &quot;observation&quot;: {
+      &quot;files&quot;: 7,
+      &quot;file_set_sha256&quot;: &quot;88b3114eff960ad5b3d9dc749dd7e7f766c8323b4a17740e29c961c240598798&quot;,
+      &quot;relationship_sha256&quot;: &quot;8911c00bcb89c42e49f67dab47ba0f07d49c5a210a82b90ca657be4ad7669541&quot;,
+      &quot;units&quot;: {
+        &quot;case&quot;: {
+          &quot;count&quot;: 7,
+          &quot;histogram&quot;: {
+            &quot;1&quot;: 7
+          },
+          &quot;files_without_unit&quot;: 0,
+          &quot;files_with_multiple_units&quot;: 0
+        }
+      }
+    },
+    &quot;independent_tsv_agrees&quot;: true,
+    &quot;visibility&quot;: &quot;aggregate_only&quot;,
+    &quot;replay_limit&quot;: &quot;An exact current selection can be refetched and compared with the hash; historical source availability is not guaranteed.&quot;
+  },
+  &quot;cohort&quot;: {
+    &quot;unit&quot;: &quot;case&quot;,
+    &quot;max_files_per_unit&quot;: 1,
+    &quot;policy&quot;: &quot;One invented record per participant.&quot;,
+    &quot;evidence_binding&quot;: &quot;Synthetic aggregate fixture, not GDC observations.&quot;
+  },
+  &quot;decision&quot;: {
+    &quot;actor&quot;: &quot;Demonstration author&quot;,
+    &quot;action&quot;: &quot;seek_information&quot;,
+    &quot;reason&quot;: &quot;Structure is consistent, but endpoint reconstruction is not identified. One passing check cannot authorize the whole reuse decision.&quot;,
+    &quot;context_sha256&quot;: &quot;466e013a82324b015ca609f92babf8205d416360c853aa2276e05fdf9597fb2a&quot;,
+    &quot;evaluator_version&quot;: &quot;0.1.0&quot;,
+    &quot;evaluator_sha256&quot;: &quot;6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007&quot;
+  }
+}</pre></details><p><small>Local report. Replay with the reference evaluator to recompute checks and decision validity; this HTML is a captured view.</small></p></html>

@@ -1,0 +1,57 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "target-primary-marrow-aliquot-1",
+      "description": "Illustrative aliquot-level file-cardinality decision for a public expression selection.",
+      "datePublished": "2026-09-30",
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT"
+      },
+      "hasPart": [
+        {
+          "@id": "contract.json"
+        },
+        {
+          "@id": "evaluation.json"
+        },
+        {
+          "@id": "report.html"
+        }
+      ]
+    },
+    {
+      "@id": "contract.json",
+      "@type": "File",
+      "name": "contract.json",
+      "encodingFormat": "application/json",
+      "sha256": "2c3c91c5e95e2a30dfab3c55f493e8450f702057663fddf5441a343e937392d6"
+    },
+    {
+      "@id": "evaluation.json",
+      "@type": "File",
+      "name": "evaluation.json",
+      "encodingFormat": "application/json",
+      "sha256": "a022939cdce489ae1fd86067379e7fb3240872d258882bb01600548a83d5bef9"
+    },
+    {
+      "@id": "report.html",
+      "@type": "File",
+      "name": "report.html",
+      "encodingFormat": "text/html",
+      "sha256": "1380bf0acb80f58859a6be50df02041ce22ab932fe0b8c10c67669629835fa18"
+    }
+  ]
+}

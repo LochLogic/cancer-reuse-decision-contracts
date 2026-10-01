@@ -1,0 +1,91 @@
+{
+  "schema_version": "0.1",
+  "id": "synthetic-combined-contract",
+  "purpose": "Synthetic seven-participant demonstration: check both one-file-per-participant structure and endpoint reconstruction before recording one reuse decision.",
+  "endpoint": {
+    "source_profile": {
+      "origin": "diagnosis",
+      "events": [
+        "progression",
+        "death_any"
+      ],
+      "censor_at": [
+        "last_contact"
+      ],
+      "cutoff": null,
+      "unit": "days",
+      "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+      "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+    },
+    "target_profile": {
+      "origin": "randomization",
+      "events": [
+        "progression",
+        "death_any"
+      ],
+      "censor_at": [
+        "last_contact"
+      ],
+      "cutoff": null,
+      "unit": "days",
+      "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+      "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+    },
+    "available_components": [
+      "source_elapsed_days",
+      "source_event"
+    ],
+    "component_evidence": "Declared components of an invented fixture. No patient data supplied.",
+    "binding": "Synthetic rule binding; source citations explain mechanisms, not clinical approval."
+  },
+  "selection": {
+    "source": "Invented fixture",
+    "project": "SYNTHETIC",
+    "data_type": "Gene Expression Quantification",
+    "captured_at_utc": "2026-10-01T00:52:10.312703+00:00",
+    "release": "fixture-1",
+    "query": {
+      "fixture": "seven-invented-participants"
+    },
+    "query_sha256": "51edfde2f63d1c7a9a80a8c3c362fa0f6dbfee8441114bb7bf5b096a7e3701b7",
+    "complete": true,
+    "pagination": {
+      "total": 7
+    },
+    "status_before": {
+      "fixture": "synthetic"
+    },
+    "observation": {
+      "files": 7,
+      "file_set_sha256": "88b3114eff960ad5b3d9dc749dd7e7f766c8323b4a17740e29c961c240598798",
+      "relationship_sha256": "8911c00bcb89c42e49f67dab47ba0f07d49c5a210a82b90ca657be4ad7669541",
+      "units": {
+        "case": {
+          "count": 7,
+          "histogram": {
+            "1": 7
+          },
+          "files_without_unit": 0,
+          "files_with_multiple_units": 0
+        }
+      }
+    },
+    "independent_tsv_agrees": true,
+    "visibility": "aggregate_only",
+    "replay_limit": "An exact current selection can be refetched and compared with the hash; historical source availability is not guaranteed."
+  },
+  "cohort": {
+    "unit": "case",
+    "max_files_per_unit": 1,
+    "policy": "One invented record per participant.",
+    "evidence_binding": "Synthetic aggregate fixture, not GDC observations."
+  },
+  "decision": {
+    "actor": "Demonstration author",
+    "action": "seek_information",
+    "reason": "Structure is consistent, but endpoint reconstruction is not identified. One passing check cannot authorize the whole reuse decision.",
+    "context_sha256": "466e013a82324b015ca609f92babf8205d416360c853aa2276e05fdf9597fb2a",
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007"
+  }
+}

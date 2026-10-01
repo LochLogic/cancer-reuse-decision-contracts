@@ -1,0 +1,262 @@
+{
+  "source_file": "TCGA-CDR-SupplementalTableS1.xlsx",
+  "source_sha256": "ea594c0fbb6731477c7ac511fab449ca9c38b0d42d269591ed9f5c4090e75a5a",
+  "patients_unredacted": 11103,
+  "profiles": {
+    "OS": {
+      "origin": "diagnosis",
+      "events": [
+        "death_any"
+      ],
+      "censor_at": [
+        "last_contact"
+      ],
+      "cutoff": null,
+      "unit": "days",
+      "definition_source": "https://www.cell.com/cell/fulltext/S0092-8674(18)30229-0",
+      "definition_scope": "TCGA-CDR Table S1 notes, encoded as event and censoring rules from diagnosis. CDR exclusions and cause-of-death adjudication are not modelled."
+    },
+    "PFS": {
+      "origin": "diagnosis",
+      "events": [
+        "progression",
+        "death_any"
+      ],
+      "censor_at": [
+        "last_contact"
+      ],
+      "cutoff": null,
+      "unit": "days",
+      "definition_source": "https://www.cell.com/cell/fulltext/S0092-8674(18)30229-0",
+      "definition_scope": "TCGA-CDR Table S1 notes, encoded as event and censoring rules from diagnosis. CDR exclusions and cause-of-death adjudication are not modelled."
+    },
+    "PFI": {
+      "origin": "diagnosis",
+      "events": [
+        "progression",
+        "death_with_tumor"
+      ],
+      "censor_at": [
+        "last_contact",
+        "death_without_tumor"
+      ],
+      "cutoff": null,
+      "unit": "days",
+      "definition_source": "https://www.cell.com/cell/fulltext/S0092-8674(18)30229-0",
+      "definition_scope": "TCGA-CDR Table S1 notes, encoded as event and censoring rules from diagnosis. CDR exclusions and cause-of-death adjudication are not modelled."
+    }
+  },
+  "field_binding": {
+    "progression": "new_tumor_event_dx_days_to (smallest new tumor event day)",
+    "death": "death_days_to when vital_status is Dead",
+    "last_contact": "last_contact_days_to",
+    "death_with_tumor": "vital_status Dead and tumor_status WITH TUMOR (the CDR's own proxy)"
+  },
+  "fidelity": {
+    "OS": {
+      "patients_with_published_value": 11038,
+      "agree": 11038,
+      "agree_pct": 100.0,
+      "disagreements_by_reason": {}
+    },
+    "PFS": {
+      "patients_with_published_value": 10851,
+      "agree": 10850,
+      "agree_pct": 99.99,
+      "disagreements_by_reason": {
+        "event day differs (new tumor event vs death day)": 1
+      }
+    },
+    "PFI": {
+      "patients_with_published_value": 10851,
+      "agree": 10850,
+      "agree_pct": 99.99,
+      "disagreements_by_reason": {
+        "event day differs (new tumor event vs death day)": 1
+      }
+    }
+  },
+  "chronology_vs_model_assumptions": {
+    "dead": 3567,
+    "new tumor event after death": 1,
+    "last contact after death": 1
+  },
+  "planner": [
+    {
+      "source": "PFS",
+      "target": "PFI",
+      "baseline": "ambiguous",
+      "candidates": [
+        "progression",
+        "death",
+        "death_with_tumor",
+        "last_contact"
+      ],
+      "minimal_supplements": [
+        {
+          "fields": [
+            "death_with_tumor",
+            "progression"
+          ],
+          "minimality_established": true
+        }
+      ],
+      "status": "complete_in_model",
+      "solver": "4.15.4"
+    },
+    {
+      "source": "OS",
+      "target": "PFI",
+      "baseline": "ambiguous",
+      "candidates": [
+        "progression",
+        "death",
+        "death_with_tumor",
+        "last_contact"
+      ],
+      "minimal_supplements": [
+        {
+          "fields": [
+            "death_with_tumor",
+            "progression"
+          ],
+          "minimality_established": true
+        }
+      ],
+      "status": "complete_in_model",
+      "solver": "4.15.4"
+    },
+    {
+      "source": "PFI",
+      "target": "PFS",
+      "baseline": "ambiguous",
+      "candidates": [
+        "progression",
+        "death",
+        "death_with_tumor",
+        "last_contact"
+      ],
+      "minimal_supplements": [
+        {
+          "fields": [
+            "death"
+          ],
+          "minimality_established": true
+        }
+      ],
+      "status": "complete_in_model",
+      "solver": "4.15.4"
+    }
+  ],
+  "real_check": {
+    "PFS->PFI +death_with_tumor+progression": {
+      "shared_only": {
+        "patients": 10851,
+        "groups": 3980,
+        "conflicting_groups": 440,
+        "patients_in_conflicting_groups": 2360
+      },
+      "with_supplement": {
+        "patients": 10851,
+        "groups": 5307,
+        "conflicting_groups": 0,
+        "patients_in_conflicting_groups": 0
+      },
+      "remove_one": {
+        "death_with_tumor": {
+          "patients": 10851,
+          "groups": 4577,
+          "conflicting_groups": 204,
+          "patients_in_conflicting_groups": 601
+        },
+        "progression": {
+          "patients": 10851,
+          "groups": 4675,
+          "conflicting_groups": 322,
+          "patients_in_conflicting_groups": 1039
+        }
+      },
+      "control_unchosen_fields": {
+        "fields": [
+          "death",
+          "last_contact"
+        ],
+        "patients": 10851,
+        "groups": 6725,
+        "conflicting_groups": 168,
+        "patients_in_conflicting_groups": 450
+      }
+    },
+    "OS->PFI +death_with_tumor+progression": {
+      "shared_only": {
+        "patients": 10846,
+        "groups": 4339,
+        "conflicting_groups": 1566,
+        "patients_in_conflicting_groups": 6017
+      },
+      "with_supplement": {
+        "patients": 10846,
+        "groups": 6785,
+        "conflicting_groups": 0,
+        "patients_in_conflicting_groups": 0
+      },
+      "remove_one": {
+        "death_with_tumor": {
+          "patients": 10846,
+          "groups": 6580,
+          "conflicting_groups": 204,
+          "patients_in_conflicting_groups": 601
+        },
+        "progression": {
+          "patients": 10846,
+          "groups": 4785,
+          "conflicting_groups": 1368,
+          "patients_in_conflicting_groups": 5193
+        }
+      },
+      "control_unchosen_fields": {
+        "fields": [
+          "death",
+          "last_contact"
+        ],
+        "patients": 10846,
+        "groups": 4828,
+        "conflicting_groups": 1464,
+        "patients_in_conflicting_groups": 5424
+      }
+    },
+    "PFI->PFS +death": {
+      "shared_only": {
+        "patients": 10851,
+        "groups": 3900,
+        "conflicting_groups": 520,
+        "patients_in_conflicting_groups": 2557
+      },
+      "with_supplement": {
+        "patients": 10851,
+        "groups": 6335,
+        "conflicting_groups": 0,
+        "patients_in_conflicting_groups": 0
+      },
+      "remove_one": {
+        "death": {
+          "patients": 10851,
+          "groups": 3900,
+          "conflicting_groups": 520,
+          "patients_in_conflicting_groups": 2557
+        }
+      },
+      "control_unchosen_fields": {
+        "fields": [
+          "progression",
+          "death_with_tumor",
+          "last_contact"
+        ],
+        "patients": 10851,
+        "groups": 6227,
+        "conflicting_groups": 73,
+        "patients_in_conflicting_groups": 355
+      }
+    }
+  }
+}

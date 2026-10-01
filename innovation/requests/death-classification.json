@@ -1,0 +1,43 @@
+{
+  "id": "death-classification",
+  "source_profile": {
+    "origin": "diagnosis",
+    "events": [
+      "progression",
+      "death_any"
+    ],
+    "censor_at": [
+      "last_contact"
+    ],
+    "cutoff": null,
+    "unit": "days",
+    "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+    "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+  },
+  "target_profile": {
+    "origin": "diagnosis",
+    "events": [
+      "progression",
+      "death_with_tumor"
+    ],
+    "censor_at": [
+      "last_contact",
+      "death_without_tumor"
+    ],
+    "cutoff": null,
+    "unit": "days",
+    "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+    "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+  },
+  "available_components": [
+    "source_elapsed_days",
+    "source_event"
+  ],
+  "candidate_components": [
+    "progression",
+    "death",
+    "death_with_tumor",
+    "last_contact"
+  ],
+  "expert_baseline": "A death-with-tumor flag alone does not locate an earlier or later progression or the relevant censoring time."
+}

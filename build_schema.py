@@ -1,0 +1,14 @@
+"""Publish structural JSON Schema; evaluator owns scientific conditions."""
+import json
+from pathlib import Path
+def schema():
+ text={'type':'string','minLength':1};integer={'type':'integer','minimum':0};sha={'type':'string','pattern':'^[0-9a-f]{64}$'}
+ def obj(p,required=None,extra=False):return {'type':'object','properties':p,'required':list(p) if required is None else required,'additionalProperties':extra}
+ profile=obj({'origin':{'enum':['diagnosis','randomization']},'events':{'type':'array','uniqueItems':True,'minItems':1,'items':{'enum':['progression','death_any','death_with_tumor']}},'censor_at':{'type':'array','uniqueItems':True,'minItems':1,'items':{'enum':['last_contact','death_without_tumor','last_pretherapy_assessment']}},'cutoff':{'enum':[None,'new_therapy']},'unit':{'const':'days'},'definition_source':text,'definition_scope':text},required=[])
+ components=['source_elapsed_days','source_event','diagnosis','randomization','progression','death','death_with_tumor','last_contact','new_therapy','last_pretherapy_assessment']
+ unit=obj({'count':integer,'histogram':{'type':'object','patternProperties':{'^[1-9][0-9]*$':{'type':'integer','minimum':1}},'additionalProperties':False},'files_without_unit':integer,'files_with_multiple_units':integer},extra=True)
+ selection=obj({'source':text,'project':text,'release':text,'captured_at_utc':text,'visibility':{'const':'aggregate_only'},'query':{'type':'object'},'query_sha256':sha,'complete':{'type':'boolean'},'pagination':obj({'total':integer},extra=True),'observation':obj({'files':integer,'file_set_sha256':sha,'relationship_sha256':sha,'units':obj({k:unit for k in ['case','sample','aliquot']},required=[])},extra=True)},extra=True)
+ p={'schema_version':{'const':'0.1'},'id':text,'purpose':text,'selection':selection,'cohort':obj({'unit':text,'max_files_per_unit':{'type':'integer','minimum':1},'policy':text,'evidence_binding':text}),'endpoint':obj({'source_profile':profile,'target_profile':profile,'available_components':{'type':'array','uniqueItems':True,'items':{'enum':components}},'component_evidence':text,'binding':text}),'decision':obj({'actor':text,'action':{'enum':['proceed_under_declared_conditions','revise_analysis','seek_information']},'reason':text,'context_sha256':sha,'evaluator_version':text,'evaluator_sha256':sha})}
+ root=obj(p,required=['schema_version','id','purpose']);root.update({'$schema':'https://json-schema.org/draft/2020-12/schema','title':'Cancer Reuse Decision Contract 0.1 structural schema','description':'Structure only. Incomplete profiles are allowed so the evaluator can report unknown; arithmetic, reconstruction and decision validity are evaluated by contracts.py.','anyOf':[{'required':['cohort','selection']},{'required':['endpoint']}]})
+ root['dependentRequired']={'cohort':['selection']};return root
+if __name__=='__main__':(Path(__file__).resolve().parent/'contract.schema.json').write_text(json.dumps(schema(),indent=2)+'\n',encoding='utf-8')

@@ -1,0 +1,73 @@
+{
+  "evaluator_version": "0.1.0",
+  "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+  "contract_id": "synthetic-combined-contract",
+  "status": "violated",
+  "context_sha256": "466e013a82324b015ca609f92babf8205d416360c853aa2276e05fdf9597fb2a",
+  "checks": {
+    "cohort": {
+      "status": "consistent",
+      "reason": "0 case units exceed the declared maximum of 1 files.",
+      "unit": "case",
+      "distinct_units": 7,
+      "files": 7,
+      "units_over_limit": 0,
+      "policy": "One invented record per participant.",
+      "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+    },
+    "endpoint": {
+      "status": "violated",
+      "reason": "Target is not uniquely reconstructible from the declared available components.",
+      "missing_target_components": [
+        "death",
+        "last_contact",
+        "progression",
+        "randomization"
+      ],
+      "witness": {
+        "observed_components": {
+          "source_elapsed_days": 60,
+          "source_event": false
+        },
+        "history_a": {
+          "diagnosis": 0,
+          "randomization": 0,
+          "progression": null,
+          "death": null,
+          "death_with_tumor": false,
+          "last_contact": 60,
+          "new_therapy": 80,
+          "last_pretherapy_assessment": 60
+        },
+        "history_b": {
+          "diagnosis": 0,
+          "randomization": 30,
+          "progression": null,
+          "death": null,
+          "death_with_tumor": false,
+          "last_contact": 60,
+          "new_therapy": null,
+          "last_pretherapy_assessment": null
+        },
+        "target_a": {
+          "elapsed_days": 60,
+          "event": false
+        },
+        "target_b": {
+          "elapsed_days": 30,
+          "event": false
+        },
+        "synthetic": true
+      },
+      "scope": "Constructive witness in restricted source/target rules; not a clinical incompatibility certificate.",
+      "histories_compared": 139
+    }
+  },
+  "decision": {
+    "state": "current",
+    "actor": "Demonstration author",
+    "action": "seek_information",
+    "reason": "Structure is consistent, but endpoint reconstruction is not identified. One passing check cannot authorize the whole reuse decision."
+  },
+  "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+}

@@ -1,0 +1,275 @@
+{
+  "source": "https://api.gdc.cancer.gov/files",
+  "project": "TARGET-AML",
+  "data_type": "Gene Expression Quantification",
+  "captured_at_utc": "2026-10-01T00:52:10.312703+00:00",
+  "release": "46.0",
+  "query": {
+    "filters": {
+      "op": "and",
+      "content": [
+        {
+          "op": "=",
+          "content": {
+            "field": "cases.project.project_id",
+            "value": "TARGET-AML"
+          }
+        },
+        {
+          "op": "=",
+          "content": {
+            "field": "data_type",
+            "value": "Gene Expression Quantification"
+          }
+        },
+        {
+          "op": "=",
+          "content": {
+            "field": "access",
+            "value": "open"
+          }
+        }
+      ]
+    },
+    "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+    "size": 1000,
+    "sort": "file_id:asc"
+  },
+  "query_sha256": "b0aa210c2299fa64bf39dcfb07387837c12d14b8838fd0c7f19e808e9092545e",
+  "complete": true,
+  "pagination": {
+    "pages": 4,
+    "total": 3227
+  },
+  "status_before": {
+    "commit": "8f7c2a51ab0084b216ad1b62a3fae8b945439c53",
+    "data_release": "Data Release 46.0 - August 10, 2026",
+    "data_release_version": {
+      "major": 46,
+      "minor": 0,
+      "release_date": "2026-08-10"
+    },
+    "status": "OK",
+    "tag": "8.5.0",
+    "version": 1
+  },
+  "status_after": {
+    "commit": "8f7c2a51ab0084b216ad1b62a3fae8b945439c53",
+    "data_release": "Data Release 46.0 - August 10, 2026",
+    "data_release_version": {
+      "major": 46,
+      "minor": 0,
+      "release_date": "2026-08-10"
+    },
+    "status": "OK",
+    "tag": "8.5.0",
+    "version": 1
+  },
+  "observation": {
+    "files": 3227,
+    "file_set_sha256": "0d284d85152d61823db8b9a67ef4977de6e71b8322fdb079cf6f65956c2f9090",
+    "relationship_sha256": "d8041fe677504842d3590b3dc404f6d9102ae81c06549b8d2f6403fa2beaa79c",
+    "units": {
+      "case": {
+        "histogram": {
+          "1": 1540,
+          "2": 560,
+          "3": 157,
+          "4": 24
+        },
+        "count": 2281,
+        "files_without_unit": 0,
+        "files_with_multiple_units": 0
+      },
+      "sample": {
+        "histogram": {
+          "1": 2904,
+          "2": 157,
+          "3": 3
+        },
+        "count": 3064,
+        "files_without_unit": 0,
+        "files_with_multiple_units": 0
+      },
+      "aliquot": {
+        "histogram": {
+          "1": 3227
+        },
+        "count": 3227,
+        "files_without_unit": 0,
+        "files_with_multiple_units": 0
+      }
+    }
+  },
+  "independent_tsv_agrees": true,
+  "visibility": "aggregate_only",
+  "replay_limit": "An exact current selection can be refetched and compared with the hash; historical source availability is not guaranteed.",
+  "requests": [
+    {
+      "url": "https://api.gdc.cancer.gov/status",
+      "payload": null,
+      "bytes": 221,
+      "sha256": "a8b1c69f9cfc678486e1c897aee6d878f47fab9cb4c60eb6818598bbe30a7139"
+    },
+    {
+      "url": "https://api.gdc.cancer.gov/files",
+      "payload": {
+        "filters": {
+          "op": "and",
+          "content": [
+            {
+              "op": "=",
+              "content": {
+                "field": "cases.project.project_id",
+                "value": "TARGET-AML"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "data_type",
+                "value": "Gene Expression Quantification"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "access",
+                "value": "open"
+              }
+            }
+          ]
+        },
+        "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+        "size": 1000,
+        "sort": "file_id:asc",
+        "from": 0
+      },
+      "bytes": 344587,
+      "sha256": "9ebfad29244514e46b5b54dd9df9cf2b981ee71805631ae5ab16de0d2b232985"
+    },
+    {
+      "url": "https://api.gdc.cancer.gov/files",
+      "payload": {
+        "filters": {
+          "op": "and",
+          "content": [
+            {
+              "op": "=",
+              "content": {
+                "field": "cases.project.project_id",
+                "value": "TARGET-AML"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "data_type",
+                "value": "Gene Expression Quantification"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "access",
+                "value": "open"
+              }
+            }
+          ]
+        },
+        "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+        "size": 1000,
+        "sort": "file_id:asc",
+        "from": 1000
+      },
+      "bytes": 345588,
+      "sha256": "53b2c0ff3e69984c9ffc54eebd24dcbe592d7fb0520db0d7f718f537d940da9c"
+    },
+    {
+      "url": "https://api.gdc.cancer.gov/files",
+      "payload": {
+        "filters": {
+          "op": "and",
+          "content": [
+            {
+              "op": "=",
+              "content": {
+                "field": "cases.project.project_id",
+                "value": "TARGET-AML"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "data_type",
+                "value": "Gene Expression Quantification"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "access",
+                "value": "open"
+              }
+            }
+          ]
+        },
+        "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+        "size": 1000,
+        "sort": "file_id:asc",
+        "from": 2000
+      },
+      "bytes": 345125,
+      "sha256": "b477d4ce46123136a69bea98d64a8b31d5d8c96e25d7dddd59cf6750ae2015f6"
+    },
+    {
+      "url": "https://api.gdc.cancer.gov/files",
+      "payload": {
+        "filters": {
+          "op": "and",
+          "content": [
+            {
+              "op": "=",
+              "content": {
+                "field": "cases.project.project_id",
+                "value": "TARGET-AML"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "data_type",
+                "value": "Gene Expression Quantification"
+              }
+            },
+            {
+              "op": "=",
+              "content": {
+                "field": "access",
+                "value": "open"
+              }
+            }
+          ]
+        },
+        "fields": "file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id",
+        "size": 1000,
+        "sort": "file_id:asc",
+        "from": 3000
+      },
+      "bytes": 78416,
+      "sha256": "2ff92c93118e26e830355b3bd16919af7741cbb873082488074b2ff5803736f5"
+    },
+    {
+      "url": "https://api.gdc.cancer.gov/files?filters=%7B%22op%22%3A+%22and%22%2C+%22content%22%3A+%5B%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22cases.project.project_id%22%2C+%22value%22%3A+%22TARGET-AML%22%7D%7D%2C+%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22data_type%22%2C+%22value%22%3A+%22Gene+Expression+Quantification%22%7D%7D%2C+%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22access%22%2C+%22value%22%3A+%22open%22%7D%7D%5D%7D&fields=file_id%2Canalysis.workflow_type%2Ccases.submitter_id%2Ccases.samples.submitter_id%2Ccases.samples.portions.analytes.aliquots.submitter_id&size=10000&sort=file_id%3Aasc&format=TSV",
+      "payload": null,
+      "bytes": 496918,
+      "sha256": "de5aeb748ac5b662ced73b6ddec5d0143f3848157e54df154708067eccaa5705"
+    },
+    {
+      "url": "https://api.gdc.cancer.gov/status",
+      "payload": null,
+      "bytes": 221,
+      "sha256": "a8b1c69f9cfc678486e1c897aee6d878f47fab9cb4c60eb6818598bbe30a7139"
+    }
+  ]
+}

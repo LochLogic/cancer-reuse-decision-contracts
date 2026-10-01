@@ -1,0 +1,26 @@
+{
+  "evaluator_version": "0.1.0",
+  "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007",
+  "contract_id": "target-all-sample-1",
+  "status": "violated",
+  "context_sha256": "2bb2047ccd9448fe07622dfd5bbb42ebb0c83817c20339f1096d318c061f9506",
+  "checks": {
+    "cohort": {
+      "status": "violated",
+      "reason": "160 sample units exceed the declared maximum of 1 files.",
+      "unit": "sample",
+      "distinct_units": 3064,
+      "files": 3227,
+      "units_over_limit": 160,
+      "policy": "Require at most one selected file per declared unit; do not choose files automatically.",
+      "scope": "Cardinality consistency only; no independence, eligibility or specimen-quality inference."
+    }
+  },
+  "decision": {
+    "state": "current",
+    "actor": "Demonstration author",
+    "action": "revise_analysis",
+    "reason": "The one-file-per-sample condition is violated; specify a selection or repeated-unit policy before this intended construction."
+  },
+  "interpretation": "Limited consistency/reconstruction checks. Source binding is supplied evidence. Scientific suitability and record authenticity require separate review."
+}

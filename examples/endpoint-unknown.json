@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "id": "synthetic-missing-specification",
+  "purpose": "Synthetic illustration: can a diagnosis-based endpoint summary support a randomization-based elapsed-time target?",
+  "endpoint": {
+    "source_profile": {
+      "origin": "diagnosis",
+      "events": [
+        "progression",
+        "death_any"
+      ],
+      "censor_at": [
+        "last_contact"
+      ],
+      "cutoff": null,
+      "unit": "days",
+      "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+      "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+    },
+    "target_profile": {
+      "origin": "randomization",
+      "events": [
+        "progression",
+        "death_any"
+      ],
+      "censor_at": [
+        "last_contact"
+      ],
+      "unit": "days",
+      "definition_source": "https://pharmaverse.github.io/admiral/cran-release/reference/derive_param_tte.html",
+      "definition_scope": "Synthetic mechanism fixture, not a full clinical or regulatory endpoint definition."
+    },
+    "available_components": [
+      "source_elapsed_days",
+      "source_event"
+    ],
+    "component_evidence": "Declared components of an invented fixture. No patient data supplied.",
+    "binding": "Synthetic rule binding; source citations explain mechanisms, not clinical approval."
+  },
+  "decision": {
+    "actor": "Demonstration author",
+    "action": "seek_information",
+    "reason": "Clarify the incomplete target specification.",
+    "context_sha256": "d44024d262291a761f132e47018d9e9de16a56d0c10abbd7918209299456849d",
+    "evaluator_version": "0.1.0",
+    "evaluator_sha256": "6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007"
+  }
+}

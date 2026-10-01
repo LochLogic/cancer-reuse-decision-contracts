@@ -1,0 +1,303 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cancer Reuse Decision Contract</title><style>body{max-width:950px;margin:40px auto;padding:0 24px;background:#f4f7f6;color:#16343d;font:17px/1.5 system-ui}h1{font-size:34px}section{background:white;border:1px solid #ccdeda;border-radius:12px;padding:22px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}summary{cursor:pointer;color:#006966}small{color:#52686d}</style><h1>Cancer Reuse Decision Contract</h1><p>Illustrative sample-level file-cardinality decision for a public expression selection.</p><section><h2>Checked conditions: consistent</h2><p>Recorded decision: current</p><p><b>Recorded action: Proceed under the declared conditions</b><br>Recorded by: Demonstration author</p><p>Keep labeled within-sample multiplicity under the declared maximum; this does not establish independent observations.</p><small>Each result applies to its stated scope. It does not approve a scientific design.</small></section><section><h2>Cohort / consistent</h2><p>0 sample units exceed the declared maximum of 3 files.</p><p>3227 selected files; 3064 distinct sample units. Policy: Retain labeled aliquot files; interpret repeated units within the declared structure.</p><details><summary>Evidence and scope</summary><pre>{
+  &quot;status&quot;: &quot;consistent&quot;,
+  &quot;reason&quot;: &quot;0 sample units exceed the declared maximum of 3 files.&quot;,
+  &quot;unit&quot;: &quot;sample&quot;,
+  &quot;distinct_units&quot;: 3064,
+  &quot;files&quot;: 3227,
+  &quot;units_over_limit&quot;: 0,
+  &quot;policy&quot;: &quot;Retain labeled aliquot files; interpret repeated units within the declared structure.&quot;,
+  &quot;scope&quot;: &quot;Cardinality consistency only; no independence, eligibility or specimen-quality inference.&quot;
+}</pre></details></section><details><summary>Complete portable contract</summary><pre>{
+  &quot;schema_version&quot;: &quot;0.1&quot;,
+  &quot;id&quot;: &quot;target-all-sample-3&quot;,
+  &quot;purpose&quot;: &quot;Illustrative sample-level file-cardinality decision for a public expression selection.&quot;,
+  &quot;selection&quot;: {
+    &quot;source&quot;: &quot;https://api.gdc.cancer.gov/files&quot;,
+    &quot;project&quot;: &quot;TARGET-AML&quot;,
+    &quot;data_type&quot;: &quot;Gene Expression Quantification&quot;,
+    &quot;captured_at_utc&quot;: &quot;2026-10-01T00:52:10.312703+00:00&quot;,
+    &quot;release&quot;: &quot;46.0&quot;,
+    &quot;query&quot;: {
+      &quot;filters&quot;: {
+        &quot;op&quot;: &quot;and&quot;,
+        &quot;content&quot;: [
+          {
+            &quot;op&quot;: &quot;=&quot;,
+            &quot;content&quot;: {
+              &quot;field&quot;: &quot;cases.project.project_id&quot;,
+              &quot;value&quot;: &quot;TARGET-AML&quot;
+            }
+          },
+          {
+            &quot;op&quot;: &quot;=&quot;,
+            &quot;content&quot;: {
+              &quot;field&quot;: &quot;data_type&quot;,
+              &quot;value&quot;: &quot;Gene Expression Quantification&quot;
+            }
+          },
+          {
+            &quot;op&quot;: &quot;=&quot;,
+            &quot;content&quot;: {
+              &quot;field&quot;: &quot;access&quot;,
+              &quot;value&quot;: &quot;open&quot;
+            }
+          }
+        ]
+      },
+      &quot;fields&quot;: &quot;file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id&quot;,
+      &quot;size&quot;: 1000,
+      &quot;sort&quot;: &quot;file_id:asc&quot;
+    },
+    &quot;query_sha256&quot;: &quot;b0aa210c2299fa64bf39dcfb07387837c12d14b8838fd0c7f19e808e9092545e&quot;,
+    &quot;complete&quot;: true,
+    &quot;pagination&quot;: {
+      &quot;pages&quot;: 4,
+      &quot;total&quot;: 3227
+    },
+    &quot;status_before&quot;: {
+      &quot;commit&quot;: &quot;8f7c2a51ab0084b216ad1b62a3fae8b945439c53&quot;,
+      &quot;data_release&quot;: &quot;Data Release 46.0 - August 10, 2026&quot;,
+      &quot;data_release_version&quot;: {
+        &quot;major&quot;: 46,
+        &quot;minor&quot;: 0,
+        &quot;release_date&quot;: &quot;2026-08-10&quot;
+      },
+      &quot;status&quot;: &quot;OK&quot;,
+      &quot;tag&quot;: &quot;8.5.0&quot;,
+      &quot;version&quot;: 1
+    },
+    &quot;status_after&quot;: {
+      &quot;commit&quot;: &quot;8f7c2a51ab0084b216ad1b62a3fae8b945439c53&quot;,
+      &quot;data_release&quot;: &quot;Data Release 46.0 - August 10, 2026&quot;,
+      &quot;data_release_version&quot;: {
+        &quot;major&quot;: 46,
+        &quot;minor&quot;: 0,
+        &quot;release_date&quot;: &quot;2026-08-10&quot;
+      },
+      &quot;status&quot;: &quot;OK&quot;,
+      &quot;tag&quot;: &quot;8.5.0&quot;,
+      &quot;version&quot;: 1
+    },
+    &quot;observation&quot;: {
+      &quot;files&quot;: 3227,
+      &quot;file_set_sha256&quot;: &quot;0d284d85152d61823db8b9a67ef4977de6e71b8322fdb079cf6f65956c2f9090&quot;,
+      &quot;relationship_sha256&quot;: &quot;d8041fe677504842d3590b3dc404f6d9102ae81c06549b8d2f6403fa2beaa79c&quot;,
+      &quot;units&quot;: {
+        &quot;case&quot;: {
+          &quot;histogram&quot;: {
+            &quot;1&quot;: 1540,
+            &quot;2&quot;: 560,
+            &quot;3&quot;: 157,
+            &quot;4&quot;: 24
+          },
+          &quot;count&quot;: 2281,
+          &quot;files_without_unit&quot;: 0,
+          &quot;files_with_multiple_units&quot;: 0
+        },
+        &quot;sample&quot;: {
+          &quot;histogram&quot;: {
+            &quot;1&quot;: 2904,
+            &quot;2&quot;: 157,
+            &quot;3&quot;: 3
+          },
+          &quot;count&quot;: 3064,
+          &quot;files_without_unit&quot;: 0,
+          &quot;files_with_multiple_units&quot;: 0
+        },
+        &quot;aliquot&quot;: {
+          &quot;histogram&quot;: {
+            &quot;1&quot;: 3227
+          },
+          &quot;count&quot;: 3227,
+          &quot;files_without_unit&quot;: 0,
+          &quot;files_with_multiple_units&quot;: 0
+        }
+      }
+    },
+    &quot;independent_tsv_agrees&quot;: true,
+    &quot;visibility&quot;: &quot;aggregate_only&quot;,
+    &quot;replay_limit&quot;: &quot;An exact current selection can be refetched and compared with the hash; historical source availability is not guaranteed.&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;url&quot;: &quot;https://api.gdc.cancer.gov/status&quot;,
+        &quot;payload&quot;: null,
+        &quot;bytes&quot;: 221,
+        &quot;sha256&quot;: &quot;a8b1c69f9cfc678486e1c897aee6d878f47fab9cb4c60eb6818598bbe30a7139&quot;
+      },
+      {
+        &quot;url&quot;: &quot;https://api.gdc.cancer.gov/files&quot;,
+        &quot;payload&quot;: {
+          &quot;filters&quot;: {
+            &quot;op&quot;: &quot;and&quot;,
+            &quot;content&quot;: [
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;cases.project.project_id&quot;,
+                  &quot;value&quot;: &quot;TARGET-AML&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;data_type&quot;,
+                  &quot;value&quot;: &quot;Gene Expression Quantification&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;access&quot;,
+                  &quot;value&quot;: &quot;open&quot;
+                }
+              }
+            ]
+          },
+          &quot;fields&quot;: &quot;file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id&quot;,
+          &quot;size&quot;: 1000,
+          &quot;sort&quot;: &quot;file_id:asc&quot;,
+          &quot;from&quot;: 0
+        },
+        &quot;bytes&quot;: 344587,
+        &quot;sha256&quot;: &quot;9ebfad29244514e46b5b54dd9df9cf2b981ee71805631ae5ab16de0d2b232985&quot;
+      },
+      {
+        &quot;url&quot;: &quot;https://api.gdc.cancer.gov/files&quot;,
+        &quot;payload&quot;: {
+          &quot;filters&quot;: {
+            &quot;op&quot;: &quot;and&quot;,
+            &quot;content&quot;: [
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;cases.project.project_id&quot;,
+                  &quot;value&quot;: &quot;TARGET-AML&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;data_type&quot;,
+                  &quot;value&quot;: &quot;Gene Expression Quantification&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;access&quot;,
+                  &quot;value&quot;: &quot;open&quot;
+                }
+              }
+            ]
+          },
+          &quot;fields&quot;: &quot;file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id&quot;,
+          &quot;size&quot;: 1000,
+          &quot;sort&quot;: &quot;file_id:asc&quot;,
+          &quot;from&quot;: 1000
+        },
+        &quot;bytes&quot;: 345588,
+        &quot;sha256&quot;: &quot;53b2c0ff3e69984c9ffc54eebd24dcbe592d7fb0520db0d7f718f537d940da9c&quot;
+      },
+      {
+        &quot;url&quot;: &quot;https://api.gdc.cancer.gov/files&quot;,
+        &quot;payload&quot;: {
+          &quot;filters&quot;: {
+            &quot;op&quot;: &quot;and&quot;,
+            &quot;content&quot;: [
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;cases.project.project_id&quot;,
+                  &quot;value&quot;: &quot;TARGET-AML&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;data_type&quot;,
+                  &quot;value&quot;: &quot;Gene Expression Quantification&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;access&quot;,
+                  &quot;value&quot;: &quot;open&quot;
+                }
+              }
+            ]
+          },
+          &quot;fields&quot;: &quot;file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id&quot;,
+          &quot;size&quot;: 1000,
+          &quot;sort&quot;: &quot;file_id:asc&quot;,
+          &quot;from&quot;: 2000
+        },
+        &quot;bytes&quot;: 345125,
+        &quot;sha256&quot;: &quot;b477d4ce46123136a69bea98d64a8b31d5d8c96e25d7dddd59cf6750ae2015f6&quot;
+      },
+      {
+        &quot;url&quot;: &quot;https://api.gdc.cancer.gov/files&quot;,
+        &quot;payload&quot;: {
+          &quot;filters&quot;: {
+            &quot;op&quot;: &quot;and&quot;,
+            &quot;content&quot;: [
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;cases.project.project_id&quot;,
+                  &quot;value&quot;: &quot;TARGET-AML&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;data_type&quot;,
+                  &quot;value&quot;: &quot;Gene Expression Quantification&quot;
+                }
+              },
+              {
+                &quot;op&quot;: &quot;=&quot;,
+                &quot;content&quot;: {
+                  &quot;field&quot;: &quot;access&quot;,
+                  &quot;value&quot;: &quot;open&quot;
+                }
+              }
+            ]
+          },
+          &quot;fields&quot;: &quot;file_id,analysis.workflow_type,cases.submitter_id,cases.samples.submitter_id,cases.samples.portions.analytes.aliquots.submitter_id&quot;,
+          &quot;size&quot;: 1000,
+          &quot;sort&quot;: &quot;file_id:asc&quot;,
+          &quot;from&quot;: 3000
+        },
+        &quot;bytes&quot;: 78416,
+        &quot;sha256&quot;: &quot;2ff92c93118e26e830355b3bd16919af7741cbb873082488074b2ff5803736f5&quot;
+      },
+      {
+        &quot;url&quot;: &quot;https://api.gdc.cancer.gov/files?filters=%7B%22op%22%3A+%22and%22%2C+%22content%22%3A+%5B%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22cases.project.project_id%22%2C+%22value%22%3A+%22TARGET-AML%22%7D%7D%2C+%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22data_type%22%2C+%22value%22%3A+%22Gene+Expression+Quantification%22%7D%7D%2C+%7B%22op%22%3A+%22%3D%22%2C+%22content%22%3A+%7B%22field%22%3A+%22access%22%2C+%22value%22%3A+%22open%22%7D%7D%5D%7D&amp;fields=file_id%2Canalysis.workflow_type%2Ccases.submitter_id%2Ccases.samples.submitter_id%2Ccases.samples.portions.analytes.aliquots.submitter_id&amp;size=10000&amp;sort=file_id%3Aasc&amp;format=TSV&quot;,
+        &quot;payload&quot;: null,
+        &quot;bytes&quot;: 496918,
+        &quot;sha256&quot;: &quot;de5aeb748ac5b662ced73b6ddec5d0143f3848157e54df154708067eccaa5705&quot;
+      },
+      {
+        &quot;url&quot;: &quot;https://api.gdc.cancer.gov/status&quot;,
+        &quot;payload&quot;: null,
+        &quot;bytes&quot;: 221,
+        &quot;sha256&quot;: &quot;a8b1c69f9cfc678486e1c897aee6d878f47fab9cb4c60eb6818598bbe30a7139&quot;
+      }
+    ]
+  },
+  &quot;cohort&quot;: {
+    &quot;unit&quot;: &quot;sample&quot;,
+    &quot;max_files_per_unit&quot;: 3,
+    &quot;policy&quot;: &quot;Retain labeled aliquot files; interpret repeated units within the declared structure.&quot;,
+    &quot;evidence_binding&quot;: &quot;Aggregate metadata independently reconciled against TSV; cardinality only.&quot;
+  },
+  &quot;decision&quot;: {
+    &quot;actor&quot;: &quot;Demonstration author&quot;,
+    &quot;action&quot;: &quot;proceed_under_declared_conditions&quot;,
+    &quot;reason&quot;: &quot;Keep labeled within-sample multiplicity under the declared maximum; this does not establish independent observations.&quot;,
+    &quot;context_sha256&quot;: &quot;5533cfb43fdb812bab360f94ffad6a68213ddb51bf334c9b2f2d5850380fe50b&quot;,
+    &quot;evaluator_version&quot;: &quot;0.1.0&quot;,
+    &quot;evaluator_sha256&quot;: &quot;6fc1a3ec2399b4ae19427637392020a257f276e0ecf6018355ea0e296e028007&quot;
+  }
+}</pre></details><p><small>Local report. Replay with the reference evaluator to recompute checks and decision validity; this HTML is a captured view.</small></p></html>

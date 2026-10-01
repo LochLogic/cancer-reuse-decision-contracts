@@ -1,0 +1,153 @@
+{
+  "runtime": {
+    "R": "4.6.0",
+    "admiral": "1.4.2"
+  },
+  "scope": "Synthetic illustrations of specification mechanisms, not full TCGA-CDR or regulatory endpoint implementations.",
+  "outputs": [
+    {
+      "history": "H1",
+      "profile": "DIAG_ANY_DEATH",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H2",
+      "profile": "DIAG_ANY_DEATH",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H3",
+      "profile": "DIAG_ANY_DEATH",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H4",
+      "profile": "DIAG_ANY_DEATH",
+      "elapsed_days": 120,
+      "censored": 0
+    },
+    {
+      "history": "H5",
+      "profile": "DIAG_ANY_DEATH",
+      "elapsed_days": 180,
+      "censored": 1
+    },
+    {
+      "history": "H7",
+      "profile": "DIAG_ANY_DEATH",
+      "elapsed_days": 150,
+      "censored": 0
+    },
+    {
+      "history": "H1",
+      "profile": "RAND_ANY_DEATH",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H2",
+      "profile": "RAND_ANY_DEATH",
+      "elapsed_days": 70,
+      "censored": 0
+    },
+    {
+      "history": "H3",
+      "profile": "RAND_ANY_DEATH",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H4",
+      "profile": "RAND_ANY_DEATH",
+      "elapsed_days": 120,
+      "censored": 0
+    },
+    {
+      "history": "H5",
+      "profile": "RAND_ANY_DEATH",
+      "elapsed_days": 180,
+      "censored": 1
+    },
+    {
+      "history": "H7",
+      "profile": "RAND_ANY_DEATH",
+      "elapsed_days": 150,
+      "censored": 0
+    },
+    {
+      "history": "H1",
+      "profile": "DIAG_DEATH_WITH_TUMOR",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H2",
+      "profile": "DIAG_DEATH_WITH_TUMOR",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H3",
+      "profile": "DIAG_DEATH_WITH_TUMOR",
+      "elapsed_days": 100,
+      "censored": 1
+    },
+    {
+      "history": "H4",
+      "profile": "DIAG_DEATH_WITH_TUMOR",
+      "elapsed_days": 120,
+      "censored": 0
+    },
+    {
+      "history": "H5",
+      "profile": "DIAG_DEATH_WITH_TUMOR",
+      "elapsed_days": 180,
+      "censored": 1
+    },
+    {
+      "history": "H7",
+      "profile": "DIAG_DEATH_WITH_TUMOR",
+      "elapsed_days": 150,
+      "censored": 0
+    },
+    {
+      "history": "H1",
+      "profile": "RAND_THERAPY_CUTOFF",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H2",
+      "profile": "RAND_THERAPY_CUTOFF",
+      "elapsed_days": 70,
+      "censored": 0
+    },
+    {
+      "history": "H3",
+      "profile": "RAND_THERAPY_CUTOFF",
+      "elapsed_days": 100,
+      "censored": 0
+    },
+    {
+      "history": "H4",
+      "profile": "RAND_THERAPY_CUTOFF",
+      "elapsed_days": 60,
+      "censored": 1
+    },
+    {
+      "history": "H5",
+      "profile": "RAND_THERAPY_CUTOFF",
+      "elapsed_days": 180,
+      "censored": 1
+    },
+    {
+      "history": "H7",
+      "profile": "RAND_THERAPY_CUTOFF",
+      "elapsed_days": 150,
+      "censored": 0
+    }
+  ]
+}

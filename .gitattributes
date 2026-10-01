@@ -1,0 +1,3 @@
+# Store every file byte-for-byte. Saved decisions record SHA-256 hashes of the
+# evaluator and planner, so a line-ending conversion would make them read as stale.
+* -text
